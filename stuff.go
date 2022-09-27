@@ -9,7 +9,7 @@ import (
 
 // binding-interfaces
 
-// Repository
+// IRepository Repository
 type IRepository interface{}
 type Repository struct{}
 type FirstRepository struct{}
@@ -21,7 +21,7 @@ func NewFirstRepository() *FirstRepository {
 	return &FirstRepository{}
 }
 
-// Usecase
+// ILogic Logic
 type ILogic interface{}
 type Logic struct {
 	Repository IRepository
@@ -37,7 +37,7 @@ func NewFirstLogic(repository *FirstRepository) *FirstLogic {
 	return &FirstLogic{Repository: repository}
 }
 
-// Service
+// IService Service
 type IService interface{}
 type Service struct {
 	Logic ILogic
